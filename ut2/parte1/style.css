@@ -1,0 +1,311 @@
+/* ===== RESET DEL CURSO ===== */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { min-height: 100vh; line-height: 1.65; }
+img, picture, video, canvas, svg { display: block; max-width: 100%; }
+input, button, textarea, select { font: inherit; color: inherit; }
+p, h1, h2, h3, h4, h5, h6, th, td, figcaption { overflow-wrap: break-word; }
+ul, ol { list-style: none; }
+a { color: inherit; text-decoration: none; }
+table { border-collapse: collapse; width: 100%; }
+
+/* ===== MI PALETA ===== */
+:root {
+  --background: #08059e;
+  --text: #f0ecfa;
+  --accent: #6263c9;
+  --accent-light: #a48ac5;
+
+  --surface: #2e2b3d;
+  --border: #322d47;
+}
+
+/* ===== BASE ===== */
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  font-size: 1.0625rem;
+}
+
+/* ===== TITULARES ===== */
+h1, h2, h3 {
+  font-family: "Impact", "Haettenschweiler", "Arial Narrow Bold", sans-serif;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+h1 { font-size: 2.6rem; color: var(--accent-light); }
+h2 { font-size: 1.85rem; color: var(--accent); }
+h3 { font-size: 1.3rem; color: var(--accent-light); }
+
+h2 { margin-bottom: 0.9rem; }
+h3 { margin-top: 1.9rem; margin-bottom: 0.6rem; }
+
+/* ===== ZONAS EN UNA COLUMNA ===== */
+header,
+nav,
+main,
+aside,
+footer {
+  max-width: 62ch;
+  margin: 0 auto;
+  padding: 1.75rem 1.25rem;
+}
+
+header {
+  padding-top: 2.5rem;
+  border-bottom: 3px solid var(--accent);
+}
+
+header p {
+  margin-top: 0.7rem;
+  font-size: 1.15rem;
+  color: var(--accent-light);
+}
+
+nav { border-bottom: 1px solid var(--border); }
+
+main { border-bottom: 1px solid var(--border); }
+
+main p + p,
+main p + ul,
+main p + ol,
+main p + table,
+main p + form { margin-top: 0.9rem; }
+
+aside {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+footer {
+  border-top: 3px solid var(--accent);
+  margin-top: 1rem;
+  padding-bottom: 3rem;
+  font-size: 0.85rem;
+  color: var(--accent-light);
+}
+
+/* ===== MENÚ ===== */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+nav a {
+  padding-bottom: 0.15rem;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ===== TEXTO ===== */
+strong { color: var(--accent-light); }
+em { color: var(--accent-light); font-style: italic; }
+
+main ul,
+main ol {
+  list-style: disc;
+  padding-left: 1.35rem;
+}
+
+main ol { list-style: decimal; }
+
+main li { margin-bottom: 0.4rem; }
+
+main a {
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+}
+
+main a:hover,
+main a:focus-visible {
+  background: var(--accent);
+  color: #16101f;
+  border-radius: 0.25rem;
+}
+
+/* ===== FICHA TÉCNICA ===== */
+table {
+  margin-top: 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+
+caption {
+  padding: 0.6rem 1rem;
+  background: var(--accent);
+  color: #16101f;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+th {
+  width: 38%;
+  background: var(--surface);
+  color: var(--accent-light);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+tr:last-child th,
+tr:last-child td { border-bottom: none; }
+
+/* ===== FORMULARIO ===== */
+form {
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+}
+
+.notas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.notas label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.notas label:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.notas input { position: absolute; opacity: 0; }
+
+.notas label:has(input:checked) {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #16101f;
+}
+
+form label[for="comentario"] {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-light);
+}
+
+textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.7rem 0.85rem;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  resize: vertical;
+  font-size: 0.95rem;
+}
+
+textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+button {
+  margin-top: 0.4rem;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 0.6rem;
+  background: var(--accent);
+  color: #16101f;
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus-visible { background: var(--accent-light); }
+
+/* ===== GALERÍA ===== */
+.galeria {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+figure {
+  position: relative;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.destacada { border: 3px solid var(--accent); }
+
+figure img {
+  width: 100%;
+  height: auto;
+}
+
+figcaption {
+  padding: 0.7rem 0.9rem;
+  font-size: 0.8rem;
+  color: var(--accent-light);
+  border-top: 1px solid var(--border);
+}
+
+.etiqueta {
+  position: absolute;
+  top: 0.7rem;
+  left: 0.7rem;
+  z-index: 1;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #16101f;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ===== FOCO ===== */
+:focus-visible {
+  outline: 2px dashed var(--accent-light);
+  outline-offset: 3px;
+}
